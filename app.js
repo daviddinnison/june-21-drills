@@ -1,3 +1,6 @@
+//                                STEP ONE ---design state
+
+
 //API URL without a query
 var GITHUB_SEARCH_URL = 'https://api.github.com/search/repositories';
 
@@ -13,6 +16,10 @@ var RESULT_HTML_TEMPLATE = (
 );
 
 //
+
+
+//                              STEP TWO --- state mod
+
 function getDataFromApi(searchTerm, callback) { //watch for callback function
   
   //formats search term into query for the URL
@@ -24,6 +31,10 @@ function getDataFromApi(searchTerm, callback) { //watch for callback function
   //adds the query to the URL and searches
   $.getJSON(GITHUB_SEARCH_URL, query, callback);
 }
+
+
+
+//                                    STEP THREE ---    rendering
 
 
 function renderResult(result) {
@@ -54,7 +65,7 @@ function displayGitHubSearchData(data) {
 }
 
 
-
+//                                      STEP FOUR - event submission
 
 function watchSubmit() {
   $('.js-search-form').submit(function(event) {
